@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nuestros 5 Meses ❤️</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Fondo animado -->
+  <div class="stars"></div>
+  <div class="moon"></div>
+  <div class="particles"></div>
+
+  <!-- Corazón central -->
+  <div class="heart-container">
+    <div class="heart">❤️</div>
+    <h1>Para ti, mi amor</h1>
+    <button onclick="startExperience()">❤️ Abrir mi regalo</button>
+  </div>
+
+  <!-- Sección principal -->
+  <div id="app" class="hidden">
+
+    <!-- Intro -->
+    <section class="section intro">
+      <h2 class="typewriter" id="introText"></h2>
+    </section>
+
+    <!-- Contador -->
+    <section class="section counter">
+      <h2>⏳ Nuestro tiempo juntos</h2>
+
+      <div class="counter-box">
+        <p>Llevamos juntos:</p>
+        <h3>5 meses ❤️</h3>
+
+        <div class="time-grid">
+          <div><span id="days">0</span><p>Días</p></div>
+          <div><span id="hours">0</span><p>Horas</p></div>
+          <div><span id="minutes">0</span><p>Minutos</p></div>
+          <div><span id="seconds">0</span><p>Segundos</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Música -->
+    <section class="section music">
+      <h2>🎵 Nuestra canción</h2>
+      <button onclick="toggleMusic()">▶ Reproducir / Pausar</button>
+      <audio id="music" src="assets/musica/cancion.mp3"></audio>
+    </section>
+
+    <!-- Carta -->
+    <section class="section letter">
+      <h2>💌 Lo que siento por ti</h2>
+      <p>
+        Hola mi amor...  
+        Esto lo hice pensando únicamente en ti.  
+        Cada segundo contigo ha sido especial...
+      </p>
+    </section>
+
+    <!-- Fotos -->
+    <section class="section gallery">
+      <h2>📸 Nuestros recuerdos</h2>
+
+      <div class="photos">
+        <img src="assets/fotos/foto1.jpg">
+        <img src="assets/fotos/foto2.jpg">
+        <img src="assets/fotos/foto3.jpg">
+      </div>
+    </section>
+
+    <!-- Final -->
+    <section class="section final">
+      <h2>❤️ Final</h2>
+      <p id="finalText"></p>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
