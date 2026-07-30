@@ -1,88 +1,525 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nuestros 5 Meses ❤️</title>
 
-  <link rel="stylesheet" href="style.css">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>❤️ 6 Meses Contigo ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-  <!-- Fondo animado -->
-  <div class="stars"></div>
-  <div class="moon"></div>
-  <div class="particles"></div>
+<!--==============================-->
+<!-- FONDO -->
+<!--==============================-->
 
-  <!-- Corazón central -->
-  <div class="heart-container">
-    <div class="heart">❤️</div>
-    <h1>Para ti, mi amor</h1>
-    <button onclick="startExperience()">❤️ Abrir mi regalo</button>
-  </div>
+<div class="background-gradient"></div>
 
-  <!-- Sección principal -->
-  <div id="app" class="hidden">
+<div class="stars"></div>
 
-    <!-- Intro -->
-    <section class="section intro">
-      <h2 class="typewriter" id="introText"></h2>
-    </section>
+<div class="hearts"></div>
 
-    <!-- Contador -->
-    <section class="section counter">
-      <h2>⏳ Nuestro tiempo juntos</h2>
+<div class="petals"></div>
 
-      <div class="counter-box">
-        <p>Llevamos juntos:</p>
-        <h3>5 meses ❤️</h3>
+<div class="sparkles"></div>
 
-        <div class="time-grid">
-          <div><span id="days">0</span><p>Días</p></div>
-          <div><span id="hours">0</span><p>Horas</p></div>
-          <div><span id="minutes">0</span><p>Minutos</p></div>
-          <div><span id="seconds">0</span><p>Segundos</p></div>
+<div class="clouds"></div>
+
+<div class="floating-bows"></div>
+
+<div class="cursor-heart"></div>
+
+<canvas id="particlesCanvas"></canvas>
+
+<!--==============================-->
+<!-- PANTALLA DE CARGA -->
+<!--==============================-->
+
+<section id="loader">
+
+    <div class="loader-content">
+
+        <div class="loader-heart">
+
+            ❤️
+
         </div>
-      </div>
-    </section>
 
-    <!-- Música -->
-    <section class="section music">
-      <h2>🎵 Nuestra canción</h2>
-      <button onclick="toggleMusic()">▶ Reproducir / Pausar</button>
-      <audio id="music" src="assets/musica/cancion.mp3"></audio>
-    </section>
+        <h1>
 
-    <!-- Carta -->
-    <section class="section letter">
-      <h2>💌 Lo que siento por ti</h2>
-      <p>
-        Hola mi amor...  
-        Esto lo hice pensando únicamente en ti.  
-        Cada segundo contigo ha sido especial...
-      </p>
-    </section>
+            Preparando una sorpresa...
 
-    <!-- Fotos -->
-    <section class="section gallery">
-      <h2>📸 Nuestros recuerdos</h2>
+        </h1>
 
-      <div class="photos">
-        <img src="assets/fotos/foto1.jpg">
-        <img src="assets/fotos/foto2.jpg">
-        <img src="assets/fotos/foto3.jpg">
-      </div>
-    </section>
+    </div>
 
-    <!-- Final -->
-    <section class="section final">
-      <h2>❤️ Final</h2>
-      <p id="finalText"></p>
-    </section>
+</section>
 
-  </div>
+<!--==============================-->
+<!-- BIENVENIDA -->
+<!--==============================-->
 
-  <script src="script.js"></script>
+<section id="welcome">
+
+<div class="glass">
+
+<h2>
+
+Para la niña que cambió mi vida
+
+</h2>
+
+<h1>
+
+6 Meses ❤️
+
+</h1>
+
+<p>
+
+Cada momento contigo merece ser recordado...
+
+</p>
+
+<button id="startButton">
+
+Abrir Nuestra Historia
+
+</button>
+
+</div>
+
+</section>
+
+<!--==============================-->
+<!-- SOBRE -->
+<!--==============================-->
+
+<section id="envelopeSection">
+
+<div class="title-box">
+
+<h2>
+
+Antes de comenzar...
+
+</h2>
+
+<p>
+
+Tengo algo para ti 💌
+
+</p>
+
+</div>
+
+<div id="envelope">
+
+<div class="shadow"></div>
+
+<div class="back"></div>
+
+<div class="letter">
+
+<div class="mini-heart">
+
+❤️
+
+</div>
+
+<h3>
+
+Mi Amor
+
+</h3>
+
+<p>
+
+Haz clic nuevamente para abrir esta carta...
+
+</p>
+
+</div>
+
+<div class="front"></div>
+
+<div class="flap"></div>
+
+</div>
+
+</section>
+
+<!--==============================-->
+<!-- CARTA -->
+<!--==============================-->
+
+<section id="letterSection">
+
+<div class="letterPaper">
+
+<div class="paper-decoration">
+
+❤️ ❤️ ❤️
+
+</div>
+
+<h1>
+
+Para Ti...
+
+</h1>
+
+<div id="typewriter">
+
+</div>
+
+</div>
+
+</section>
+
+<!--==============================-->
+<!-- CONTADOR -->
+<!--==============================-->
+
+<section id="counterSection">
+
+<h2>
+
+Nuestro Tiempo Juntos
+
+</h2>
+
+<div class="counter-grid">
+
+<div class="counter-card">
+
+<h1 id="days">
+
+000
+
+</h1>
+
+<p>
+
+Días
+
+</p>
+
+</div>
+
+<div class="counter-card">
+
+<h1 id="hours">
+
+00
+
+</h1>
+
+<p>
+
+Horas
+
+</p>
+
+</div>
+
+<div class="counter-card">
+
+<h1 id="minutes">
+
+00
+
+</h1>
+
+<p>
+
+Minutos
+
+</p>
+
+</div>
+
+<div class="counter-card">
+
+<h1 id="seconds">
+
+00
+
+</h1>
+
+<p>
+
+Segundos
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==============================-->
+<!-- TIMELINE -->
+<!--==============================-->
+
+<section id="timeline">
+
+<h2>
+
+Nuestra Historia
+
+</h2>
+
+<div class="timeline-container">
+
+<div class="timeline-item">
+
+<div class="dot"></div>
+
+<div class="content">
+
+<h3>
+
+Nos conocimos
+
+</h3>
+
+<p>
+
+Texto...
+
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="dot"></div>
+
+<div class="content">
+
+<h3>
+
+Primer beso
+
+</h3>
+
+<p>
+
+Texto...
+
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="dot"></div>
+
+<div class="content">
+
+<h3>
+
+Primer "Te Amo"
+
+</h3>
+
+<p>
+
+Texto...
+
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="dot"></div>
+
+<div class="content">
+
+<h3>
+
+6 Meses
+
+</h3>
+
+<p>
+
+Texto...
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==============================-->
+<!-- GALERÍA -->
+<!--==============================-->
+
+<section id="gallery">
+
+<h2>
+
+Nuestros Recuerdos
+
+</h2>
+
+<div class="polaroids">
+
+<div class="photo">
+
+<img src="assets/fotos/foto1.jpg">
+
+<p>
+
+❤️
+
+</p>
+
+</div>
+
+<div class="photo">
+
+<img src="assets/fotos/foto2.jpg">
+
+<p>
+
+❤️
+
+</p>
+
+</div>
+
+<div class="photo">
+
+<img src="assets/fotos/foto3.jpg">
+
+<p>
+
+❤️
+
+</p>
+
+</div>
+
+<div class="photo">
+
+<img src="assets/fotos/foto4.jpg">
+
+<p>
+
+❤️
+
+</p>
+
+</div>
+
+<div class="photo">
+
+<img src="assets/fotos/foto5.jpg">
+
+<p>
+
+❤️
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==============================-->
+<!-- MÚSICA -->
+<!--==============================-->
+
+<section id="musicSection">
+
+<h2>
+
+Nuestra Canción
+
+</h2>
+
+<div class="music-player">
+
+<button id="playMusic">
+
+▶
+
+</button>
+
+<div class="music-disc"></div>
+
+</div>
+
+<audio id="music">
+
+<source src="assets/musica/cancion.mp3">
+
+</audio>
+
+</section>
+
+<!--==============================-->
+<!-- MENSAJE FINAL -->
+<!--==============================-->
+
+<section id="final">
+
+<div class="glass-final">
+
+<h1>
+
+Te Amo ❤️
+
+</h1>
+
+<p>
+
+Aquí escribiré el último mensaje para ti...
+
+</p>
+
+<button id="rainButton">
+
+Haz Clic ❤️
+
+</button>
+
+</div>
+
+</section>
+
+<div id="heartRain"></div>
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
